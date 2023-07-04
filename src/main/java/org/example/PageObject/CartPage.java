@@ -84,13 +84,13 @@ public class CartPage {
         cartButton.click();
     }
 
-    public static void setfirstName(String firstNam){
+    public  void setfirstName(String firstNam){
         firstName.sendKeys(firstNam);
     }
-    public static void setLastName(String lastNam){
+    public  void setLastName(String lastNam){
         lastName.sendKeys(lastNam);
    }
-    public static void setZipCode(String zipC){
+    public void setZipCode(String zipC){
         zipCode.sendKeys(zipC);
     }
 

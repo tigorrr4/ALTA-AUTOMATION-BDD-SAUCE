@@ -46,6 +46,7 @@ public class LoginPage {
         userName.sendKeys(usrName);
     }
 
+
     public void setPassword(String psd){
         password.sendKeys(psd);
     }

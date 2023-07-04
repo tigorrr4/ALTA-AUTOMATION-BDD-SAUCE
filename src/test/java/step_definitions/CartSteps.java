@@ -24,7 +24,7 @@ public class CartSteps {
 
 
     @Given("User already login")
-    public void UserAlreadyLogin(){
+    public void userAlreadyLogin(){
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.setUserName("standard_user");
         loginPage.setPassword("secret_sauce");
@@ -38,32 +38,46 @@ public class CartSteps {
         cartPage.selectProductFilter(sort);
     }
 
-    @And("User Click add Labonesie too cart button")
+    @And("User click add Labs onesie too cart button")
     public void clickAddLabsOnesie(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.clickAddLabsOnesie();
     }
 
-    @And("User Click add RedTshirt too cart button")
+    @And("User click add RedT shirt too cart button")
     public void clickAddRedTshirtTooCartButton(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.clickAddTshirtRed();
     }
 
-    @And("User click cart button")
+    @When("User click cart button")
     public void clickShoppingCart(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.clickShoppingCart();
     }
 
-    @When("User Click Remove RedTshirt on cart button")
+    @And("User click remove RedT shirt on cart button")
     public void clickRemoveRedTshirtOnCartButton(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.removeButton();
     }
+//    @Given("User already remove  item")
+//    public void userAlreadyRemove1Item(String sort){
+//    LoginPage loginPage = new LoginPage(webDriver);
+//    loginPage.setUserName("standard_user");
+//    loginPage.setPassword("secret_sauce");
+//    loginPage.clickLogin();
+//    CartPage cartPage = new CartPage(webDriver);
+//    cartPage.selectProductFilter(sort);
+//    cartPage.clickAddLabsOnesie();
+//    cartPage.clickAddTshirtRed();
+//    cartPage.clickShoppingCart();
+//    cartPage.removeButton();
+//
+//}
 
 
-    @And("User Click checkout button")
+    @And("User click checkout button")
     public void ClickCheckOutButton(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.clickCheckoutButton();
@@ -71,21 +85,21 @@ public class CartSteps {
 
 
     @When("User input {string} as firstname and input {string} as lastname and input {string} as zipCode")
-    public void fillDataCheckOut(String fristNam, String lastNam, String zipCode) throws InterruptedException {
+    public void fillDataCheckOut(String fristNam, String lastNam, String zipCode){
     CartPage cartPage = new CartPage(webDriver);
-    CartPage.setfirstName(fristNam);
-    CartPage.setLastName(lastNam);
-    CartPage.setZipCode(zipCode);
+    cartPage.setfirstName(fristNam);
+    cartPage.setLastName(lastNam);
+    cartPage.setZipCode(zipCode);
 }
 
-    @And("User Click Continue button")
+    @And("User click continue button")
     public void clickContinueButton(){
         CartPage cartPage = new CartPage(webDriver);
         cartPage.clickContinueButton();
     }
 
 
-    @And("User see items on checkout overview page")
+    @Then("User see items on checkout overview page")
     public void verifyItemsToCheckout(){
         CartPage cartPage = new CartPage(webDriver);
         Assert.assertTrue(cartPage.verifyItemsOnCart());
@@ -98,10 +112,12 @@ public class CartSteps {
 
 
 
-    @Then("User Confirmation order item on chekcout compelete page")
+    @Then("User confirmation order item on checkout complete page")
     public void verifyCompleteOrder(){
         CartPage cartPage = new CartPage(webDriver);
         Assert.assertTrue(cartPage.verifyItemsOrder());
     }
+
+
 
 }
