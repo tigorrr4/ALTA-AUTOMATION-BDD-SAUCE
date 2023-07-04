@@ -61,21 +61,6 @@ public class CartSteps {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.removeButton();
     }
-//    @Given("User already remove  item")
-//    public void userAlreadyRemove1Item(String sort){
-//    LoginPage loginPage = new LoginPage(webDriver);
-//    loginPage.setUserName("standard_user");
-//    loginPage.setPassword("secret_sauce");
-//    loginPage.clickLogin();
-//    CartPage cartPage = new CartPage(webDriver);
-//    cartPage.selectProductFilter(sort);
-//    cartPage.clickAddLabsOnesie();
-//    cartPage.clickAddTshirtRed();
-//    cartPage.clickShoppingCart();
-//    cartPage.removeButton();
-//
-//}
-
 
     @And("User click checkout button")
     public void ClickCheckOutButton(){
